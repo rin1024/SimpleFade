@@ -32,9 +32,7 @@ void SimpleFade::setup(int _targetValue, uint32_t _durationMillis) {
  * アップデート関数
  */
 int SimpleFade::update() {
-  // startMillisが0のときはイベント無視
-  // かつ、startMillisに遅延を入れる場合も考慮して、millisより超えている時にスタートにしておく
-  if (startMillis != 0 && millis() > startMillis) {
+  if (isActive()) {
     ellapsedMillis = millis() - startMillis;
     
     // 現在の位置をセット
@@ -87,6 +85,22 @@ void SimpleFade::pause() {
  */
 void SimpleFade::stop() {
   startMillis = 0;
+}
+
+/**
+ * タイマーが有効な場合true
+ */
+bool SimpleFade::isActive() {
+  // startMillisが0のときはイベント無視
+  // かつ、startMillisに遅延を入れる場合も考慮して、millisより超えている時にスタートにしておく
+  return startMillis != 0 && millis() > startMillis;
+}
+
+/**
+ * 現在の値を強制セットする場合
+ */
+void SimpleFade::setCurrentValue(int _currentValue) {
+  currentValue = _currentValue;
 }
 
 /**

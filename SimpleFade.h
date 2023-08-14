@@ -44,9 +44,13 @@ class SimpleFade {
     void pause();
     void stop();
 
+    bool isActive();
+
+    void setCurrentValue(int _currentValue);
+
     void enableDebug(int _debugType);
     void disableDebug();
-
+    
   private:
     // TODO: implement here
     //uint8_t fadeType;
