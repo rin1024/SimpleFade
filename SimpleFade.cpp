@@ -1,6 +1,5 @@
 /**
- * シリアルで「targetValue[space]durationMillis[:]」で送るとテストできる
- * 
+ * Simple fade control class
  */
 #include "SimpleFade.h"
 

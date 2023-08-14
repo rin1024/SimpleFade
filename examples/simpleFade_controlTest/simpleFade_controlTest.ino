@@ -1,3 +1,7 @@
+/**
+ * シリアルで「targetValue[space]durationMillis[:]」で送るとテストできる
+ * 
+ */
 #include <SimpleFade.h>
 
 #define __M_COMPILE_DATE__ __DATE__ " " __TIME__
