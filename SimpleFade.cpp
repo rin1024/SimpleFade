@@ -38,7 +38,7 @@ int SimpleFade::update() {
     // 終了時
     if (millis() - startMillis > durationMillis) {
       startMillis = 0;
-      return -1;
+      return currentValue;
     }
 
     ellapsedMillis = millis() - startMillis;
