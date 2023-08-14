@@ -35,16 +35,19 @@ int SimpleFade::update() {
   // startMillisが0のときはイベント無視
   // かつ、startMillisに遅延を入れる場合も考慮して、millisより超えている時にスタートにしておく
   if (startMillis != 0 && millis() > startMillis) {
+    ellapsedMillis = millis() - startMillis;
+    
+    // 現在の位置をセット
+    currentPer = (float)((float)ellapsedMillis / (float)durationMillis);
+    currentValue = startValue + (int)round((float)(targetValue - startValue) * currentPer);
+
     // 終了時
     if (millis() - startMillis > durationMillis) {
       startMillis = 0;
-      return currentValue;
+
+      // 強制的に最後の値をセット
+      currentValue = targetValue;
     }
-
-    ellapsedMillis = millis() - startMillis;
-    currentPer = (float)((float)ellapsedMillis / (float)durationMillis);
-
-    currentValue = startValue + (int)round((float)(targetValue - startValue) * currentPer);
 
     if (debugType == DEBUG_TYPE_PRINT) {
       debugPrint();
