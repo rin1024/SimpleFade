@@ -11,7 +11,7 @@ SoftwareSerial mySerial(8, 7); // RX, TX
 SimpleFade simpleFade;
 
 int currentTrackNo = 0;
-uint32_t updateTimer = 0;
+uint32_t volumeUpdateTimer = 0;
 
 void setup() {
   Serial.begin(38400);
@@ -72,12 +72,12 @@ void loop() {
   }
 
   if (simpleFade.isActive()) {
-    if (millis() - updateTimer > 150) {
+    if (millis() - volumeUpdateTimer > 150) {
       // 0になるにつれて音が出るっぽい(たぶん100でミュート)
       byte currentVolume = byte(simpleFade.update());
       mySerial.write('v');
       mySerial.write(currentVolume);
-      updateTimer = millis();
+      volumeUpdateTimer = millis();
     }
   }
 }
