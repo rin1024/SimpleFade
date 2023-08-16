@@ -121,23 +121,23 @@ void SimpleFade::disableDebug() {
  * デバッグ表示をする
  */
 void SimpleFade::debugPrint() {
-  Serial.print("[currentPer: ");
+  Serial.print(F("[currentPer: "));
   Serial.print(currentPer);
-  Serial.print("]\t");
+  Serial.print(F("]\t"));
 
-  Serial.print("currentValue: ");
+  Serial.print(F("currentValue: "));
   Serial.print(currentValue);
-  Serial.print("(");
+  Serial.print(F("("));
   Serial.print(startValue);
-  Serial.print(" to ");
+  Serial.print(F(" to "));
   Serial.print(targetValue);
-  Serial.print(")\t");
+  Serial.print(F(")\t"));
   
-  Serial.print("ellapsedMillis: ");
+  Serial.print(F("ellapsedMillis: "));
   Serial.print(ellapsedMillis);
-  Serial.print("(");
+  Serial.print(F("("));
   Serial.print(durationMillis);
-  Serial.print(")\t");
+  Serial.print(F(")\t"));
 
   Serial.println();
 }
@@ -147,19 +147,19 @@ void SimpleFade::debugPrint() {
  */
 void SimpleFade::debugPlot() {
   //Serial.print(currentPer);
-  //Serial.print("\t");
+  //Serial.print(F("\t"));
 
   Serial.print(currentValue);
-  Serial.print("\t");
+  Serial.print(F("\t"));
   Serial.print(startValue);
-  Serial.print("\t");
+  Serial.print(F("\t"));
   Serial.print(targetValue);
-  //Serial.print("\t");
+  //Serial.print(F("\t"));
   
   //Serial.print(ellapsedMillis);
-  //Serial.print("\t");
+  //Serial.print(F("\t"));
   //Serial.print(durationMillis);
-  //Serial.print("\t");
+  //Serial.print(F("\t"));
 
   Serial.println();
 }
