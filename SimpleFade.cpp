@@ -97,6 +97,13 @@ bool SimpleFade::isActive() {
 }
 
 /**
+ * 現在の値を取得する
+ */
+int SimpleFade::getCurrentValue() {
+  return currentValue;
+}
+
+/**
  * 現在の値を強制セットする場合
  */
 void SimpleFade::setCurrentValue(int _currentValue) {

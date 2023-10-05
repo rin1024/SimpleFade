@@ -46,6 +46,7 @@ class SimpleFade {
 
     bool isActive();
 
+    int getCurrentValue();    
     void setCurrentValue(int _currentValue);
 
     void enableDebug(int _debugType);
