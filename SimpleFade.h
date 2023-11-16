@@ -25,9 +25,9 @@
 //#define FADE_BY_DURATION 1
 //#define FADE_BY_SPEED    2
 
-#define DEBUG_TYPE_NONE  0
-#define DEBUG_TYPE_PRINT 1
-#define DEBUG_TYPE_PLOT  2
+#define SF_DEBUG_TYPE_NONE  0
+#define SF_DEBUG_TYPE_PRINT 1
+#define SF_DEBUG_TYPE_PLOT  2
 
 /**************************************************************************************
  * Simple fade controller

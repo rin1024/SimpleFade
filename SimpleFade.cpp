@@ -17,7 +17,7 @@ SimpleFade::SimpleFade() {
   startValue = 0;
   targetValue = 0;
   
-  debugType = DEBUG_TYPE_NONE;
+  debugType = SF_DEBUG_TYPE_NONE;
 }
 
 /**
@@ -47,10 +47,10 @@ int SimpleFade::update() {
       currentValue = targetValue;
     }
 
-    if (debugType == DEBUG_TYPE_PRINT) {
+    if (debugType == SF_DEBUG_TYPE_PRINT) {
       debugPrint();
     }
-    else if (debugType == DEBUG_TYPE_PLOT) {
+    else if (debugType == SF_DEBUG_TYPE_PLOT) {
       debugPlot();
     }
   }
@@ -121,7 +121,7 @@ void SimpleFade::enableDebug(int _debugType) {
  * デバッグ表示を無効化
  */
 void SimpleFade::disableDebug() {
-  debugType = DEBUG_TYPE_NONE;
+  debugType = SF_DEBUG_TYPE_NONE;
 }
 
 /**
